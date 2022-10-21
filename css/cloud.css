@@ -1,0 +1,144 @@
+body{
+	background-color: #3498db;
+	animation: change-color 16s forwards;
+}
+
+/* Sun */
+.sun, .sunObject{
+	margin-top: 5%;
+	width: 300px;
+	height: 300px;
+	background: yellow;
+	border-radius: 50%;
+	position: relative;
+	animation-duration: 12s;
+}
+
+/* First cloud */
+.cloud, .cloudshadow {
+	width: 350px; height: 120px;
+	background-color: ghostwhite;
+	border-radius: 100px;
+	position: relative;
+	margin: 150px 50px;
+	animation-duration: 12s;
+	
+}
+.cloud:after, .cloud:before, .cloudshadow:after, .cloudshadow:before {
+	content: '';
+	position: absolute;
+	background:ghostwhite;
+
+}
+.cloudshadow, .cloudshadow:after, .cloudshadow:before {
+    margin: 0;
+    z-index: -99;
+	position: absolute;
+}
+.cloud:after, .cloudshadow:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	border-radius: 100px;
+}
+.cloud:before, .cloudshadow:before  {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	border-radius: 200px;
+}
+
+/* Second cloud */
+.cloud2, .cloudshadow2 {
+	width: 350px; height: 120px;
+	background: darkgrey;
+	border-radius: 100px;
+	position: relative;
+	margin-left: 22%;
+	animation-duration: 12s;
+	z-index: 1;
+}
+.cloud2:after, .cloud2:before, .cloudshadow2:after, .cloudshadow2:before {
+	content: '';
+	position: absolute;
+	background: darkgray;
+	z-index: 1;
+}
+.cloudshadow2, .cloudshadow2:after, .cloudshadow2:before {
+    margin: 0;
+    z-index: 1;
+}
+.cloud2:after, .cloudshadow2:after {
+	width: 100px; height: 100px;
+	top: -50px; left: 50px;
+	border-radius: 100px;
+}
+.cloud2:before, .cloudshadow:before  {
+	width: 180px; height: 180px;
+	top: -90px; right: 50px;
+	border-radius: 200px;
+}
+
+
+
+
+
+/* add to animate cloud */
+@keyframes cloud {
+	from {left: 0px;}
+	to {left: 800px;}
+}
+
+@keyframes sun {
+	100% {
+		transform: translate(1150px, -750px);
+	}
+}
+
+
+	@keyframes bird {
+		100% {
+			transform: translate(-1300px, -650px)
+		}
+	
+	}
+
+	@keyframes change-color {
+		from {
+		  background: #3498db;
+		}
+		to {
+		  background: darkred
+		}
+	  }
+
+.cloud{
+	animation-name: cloud;
+	
+}
+
+.cloud2{
+	animation-name: cloud;
+	
+}
+
+.sun{
+	animation-name: sun;
+}
+
+.firstBird{
+	z-index: -2;
+	margin-left: 90%;
+	animation-name: bird;
+	animation-duration: 10s;
+	animation-delay: 1s;
+	
+}
+
+.secondBird{
+	z-index: -2;
+	margin-left: 76%;
+	animation-name: bird;
+	animation-duration: 10s;
+	animation-delay: 1s;
+	
+}
+
